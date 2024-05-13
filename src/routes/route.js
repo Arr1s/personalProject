@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { getUsers } = require("../controllers/user.controller");
+const { getCharacters } = require("../controllers/character.controller");
 
 // get all games
 router.get("/", async (req, res) => {
   try {
-    const users = await getUsers();
-    res.render("index", { users });
+    const characters = await getCharacters();
+    res.render("index", { character });
   } catch (error) {
     console.error(error);
   }

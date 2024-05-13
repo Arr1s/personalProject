@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const UserSchema = mongoose.Schema(
+const CharacterSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -8,11 +8,10 @@ const UserSchema = mongoose.Schema(
       unique: true,
     },
 
-    email: {
+    originalNation: {
       type: String,
       required: true,
       unique: true,
-      trim: true,
     },
 
     password: {
@@ -40,6 +39,6 @@ const UserSchema = mongoose.Schema(
   }
 );
 
-const User = mongoose.model("User", UserSchema);
+const character = mongoose.model("character", CharacterSchema);
 
-module.exports = User;
+module.exports = character;
